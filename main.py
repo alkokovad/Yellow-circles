@@ -3,7 +3,7 @@ from random import randint
 
 from PyQt5 import uic
 from PyQt5.QtGui import QColor, QPainter, QBrush
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton
+from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
 class MainWindow(QMainWindow):
@@ -14,8 +14,8 @@ class MainWindow(QMainWindow):
         self.pushButton.clicked.connect(self.run)
 
     def run(self):
-        self.paint()
-        self.paintEvent(event='')
+        self.do_paint = True
+        self.paintEvent(self.repaint())
 
     def generate(self, qp):
         qp.setBrush(QBrush(QColor(255, 255, 0)))
@@ -28,10 +28,6 @@ class MainWindow(QMainWindow):
             qp.begin(self)
             self.generate(qp)
             qp.end()
-
-    def paint(self):
-        self.do_paint = True
-        self.repaint()
 
 
 if __name__ == '__main__':

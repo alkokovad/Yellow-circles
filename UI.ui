@@ -26,7 +26,7 @@
       <item>
        <widget class="QPushButton" name="pushButton">
         <property name="text">
-         <string>PushButton</string>
+         <string>Начать генерировать круги</string>
         </property>
        </widget>
       </item>
