@@ -15,7 +15,7 @@ class MainWindow(QMainWindow):
 
     def run(self):
         self.do_paint = True
-        self.paintEvent(self.repaint())
+        self.repaint()
 
     def generate(self, qp):
         qp.setBrush(QBrush(QColor(255, 255, 0)))
